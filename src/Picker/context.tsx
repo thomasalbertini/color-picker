@@ -1,14 +1,14 @@
-import React, {
+import {
   createContext,
-  useContext,
-  useState,
   ReactNode,
+  useContext,
   useEffect,
+  useState,
 } from 'react'
-import { isUpperCase, getColorObj, getDetails } from './utils/utils.js'
-import { low, high, getColors } from './utils/formatters.js'
-import { GradientProps, Styles } from './shared/types.js'
 import tinycolor from 'tinycolor2'
+import { GradientProps, Styles } from './shared/types.ts'
+import { getColors, high, low } from './utils/formatters.ts'
+import { getColorObj, getDetails, isUpperCase } from './utils/utils.ts'
 
 const PickerContext = createContext<PickerContextProps | null>(null)
 
@@ -21,7 +21,9 @@ export default function PickerContextWrapper({
   squareHeight,
   defaultStyles,
 }: PCWProps) {
+
   const colors = getColors(value)
+
   const { degrees, degreeStr, isGradient, gradientType } = getDetails(value)
   const { currentColor, selectedColor, currentLeft } = getColorObj(colors)
   const [inputType, setInputType] = useState('rgb')
@@ -37,7 +39,6 @@ export default function PickerContextWrapper({
     } else {
       setHc({ ...rgba, ...hsv })
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentColor])
 
   const createGradientStr = (newColors: GradientProps[]) => {

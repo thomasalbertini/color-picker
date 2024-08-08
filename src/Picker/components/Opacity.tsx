@@ -1,7 +1,6 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState, useEffect } from 'react'
-import { usePicker } from '../context.js'
-import { getHandleValue } from '../utils/utils.js'
+import { usePicker } from '../context.tsx'
+import { getHandleValue } from '../utils/utils.ts'
 
 const Opacity = () => {
   const { handleChange, hc = {}, squareWidth, defaultStyles } = usePicker()

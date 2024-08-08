@@ -1,11 +1,10 @@
-'use client'
 import React, { useRef } from 'react'
-import PickerContextWrapper from '../context.js'
-import Picker from './Picker.js'
-import { ColorPickerProps } from '../shared/types.js'
-import { defaultLocales } from '../constants.js'
-import { objectToString } from '../utils/utils.js'
-import { getStyles } from '../styles/styles.js'
+import PickerContextWrapper from '../context.tsx'
+import { ColorPickerProps } from '../shared/types.ts'
+import Picker from './Picker.tsx'
+import { objectToString } from '../utils/utils.ts'
+import { getStyles } from '../styles/styles.ts'
+import { defaultLocales } from '../constants.ts'
 
 export function ColorPicker({
   value = 'rgba(175, 51, 242, 1)',

@@ -1,11 +1,9 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable react/jsx-no-leaked-render */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { useEffect, useState } from 'react'
-import { usePicker } from '../context.js'
-import { GradientProps } from '../shared/types.js'
-import { high, low } from '../utils/formatters.js'
-import { getHandleValue } from '../utils/utils.js'
+import { useEffect, useState } from 'react'
+import { usePicker } from '../context.tsx'
+import { GradientProps } from '../shared/types.ts'
+import { high, low } from '../utils/formatters.ts'
+import { getHandleValue } from '../utils/utils.ts'
+
 
 export const Handle = ({
   left,
@@ -105,7 +103,6 @@ const GradientBar = () => {
     const left = getHandleValue(e)
     const newColors = [
       ...colors.map((c: any) => {
-        console.log(c)
         return { ...c, value: low(c) }
       }),
       { value: currentColor, left: left },

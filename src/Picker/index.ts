@@ -1,11 +1,8 @@
-import { ColorPicker } from './components/index.js'
-export { useColorPicker } from './hooks/useColorPicker.js'
+import { ColorPicker } from './components/index.tsx'
+export { useColorPicker } from './hooks/useColorPicker.ts'
 
 export type {
-  ColorsProps,
-  LocalesProps,
-  GradientProps,
-  ColorPickerProps
+  ColorPickerProps, ColorsProps, GradientProps, LocalesProps
 } from './shared/types.js'
 
 export default ColorPicker

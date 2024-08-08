@@ -1,5 +1,5 @@
 import React from 'react'
-import { usePicker } from '../context.js'
+import { usePicker } from '../context.tsx'
 
 type ColorProps = {
   color: string

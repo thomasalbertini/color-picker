@@ -1,19 +1,17 @@
-/* eslint-disable react/jsx-no-leaked-render */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { useState } from "react";
-import { config } from "../constants.js";
-import { usePicker } from "../context.js";
-import { LocalesProps } from "../shared/types.js";
+import { useState } from "react";
+import { config } from "../constants.ts";
+import { usePicker } from "../context.tsx";
+import { LocalesProps } from "../shared/types.ts";
 import {
   colorTypeBtnStyles,
   controlBtnStyles,
   modalBtnStyles,
-} from "../styles/styles.js";
-import AdvancedControls from "./AdvancedControls.js";
-import ComparibleColors from "./ComparibleColors.js";
-import EyeDropper from "./EyeDropper.js";
-import GradientControls from "./GradientControls.js";
-import { InputsIcon, PaletteIcon, SlidersIcon } from "./icon.js";
+} from "../styles/styles.ts";
+import AdvancedControls from "./AdvancedControls.tsx";
+import ComparibleColors from "./ComparibleColors.tsx";
+import EyeDropper from "./EyeDropper.tsx";
+import GradientControls from "./GradientControls.tsx";
+import { InputsIcon, PaletteIcon, SlidersIcon } from "./icon.tsx";
 const { defaultColor, defaultGradient } = config;
 
 const ColorTypeBtns = ({

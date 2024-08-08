@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { usePicker } from '../context.js'
-import usePaintHue from '../hooks/usePaintHue.js'
-import { getHandleValue } from '../utils/utils.js'
+import { usePicker } from '../context.tsx'
+import usePaintHue from '../hooks/usePaintHue.ts'
+import { getHandleValue } from '../utils/utils.ts'
 import tinycolor from 'tinycolor2'
 
 const Hue = () => {

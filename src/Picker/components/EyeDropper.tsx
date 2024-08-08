@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import Portal from './Portal.js'
 import html2canvas from 'html2canvas'
-import { controlBtnStyles } from '../styles/styles.js'
+import { useState } from 'react'
 import tc from 'tinycolor2'
-import { usePicker } from '../context.js'
+import { usePicker } from "../context.tsx"
+import { controlBtnStyles } from '../styles/styles.ts'
+import Portal from './Portal.tsx'
 
 const DropperIcon = ({ color }: { color: string }) => {
   const { defaultStyles } = usePicker()

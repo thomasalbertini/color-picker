@@ -1,5 +1,5 @@
-import { Styles } from '../shared/types.js';
-import { darkStyles } from './darkStyles.js';
+import { Styles } from '../shared/types.ts';
+import { darkStyles } from './darkStyles.ts';
 
 const styles: Styles = {
   body: {
@@ -160,8 +160,8 @@ const styles: Styles = {
     border: '2px solid white',
     borderRadius: '50%',
     boxShadow: '0px 0px 3px rgba(0, 0, 0, 0.5)',
-    width: '14px',
-    height: '14px',
+    width: '18px',
+    height: '18px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

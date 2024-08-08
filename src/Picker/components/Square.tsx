@@ -1,11 +1,10 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { useRef, useState, useEffect } from "react";
-import usePaintSquare from "../hooks/usePaintSquare.js";
 import throttle from "lodash.throttle";
-import { usePicker } from "../context.js";
+import { useEffect, useRef, useState } from "react";
 import tinycolor from "tinycolor2";
-import { computePickerPosition, computeSquareXY } from "../utils/utils.js";
-import { config } from "../constants.js";
+import { config } from "../constants.ts";
+import { usePicker } from "../context.tsx";
+import usePaintSquare from "../hooks/usePaintSquare.ts";
+import { computePickerPosition, computeSquareXY } from "../utils/utils.ts";
 
 const { crossSize } = config;
 

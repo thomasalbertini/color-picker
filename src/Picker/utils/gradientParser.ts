@@ -1,6 +1,6 @@
-import { high, low } from './formatters.js'
-import { isUpperCase } from './utils.js'
 import tinycolor from 'tinycolor2'
+import { high, low } from './formatters.ts'
+import { isUpperCase } from './utils.ts'
 
 export const gradientParser = (input = '') => {
   const tokens = {
@@ -261,7 +261,7 @@ export const gradientParser = (input = '') => {
   }
 
   function matchListRadialOrientations() {
-    var radialOrientations,
+    let radialOrientations,
       radialOrientation = matchRadialOrientation(),
       lookaheadCache
 
