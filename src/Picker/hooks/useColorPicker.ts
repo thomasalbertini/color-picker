@@ -48,8 +48,8 @@ export const useColorPicker = (
   }
 
   const tiny = tc(currentColor)
-  const { r, g, b, a } = tiny.toRgb()
-  const { h, s, l } = tiny.toHsl()
+  const { r, g, b, a } = tiny!.toRgb()
+  const { h, s, l } = tiny!.toHsl()
 
   useEffect(() => {
     if (tc(currentColor)?.isValid() && previousColors[0] !== currentColor) {
@@ -144,14 +144,14 @@ export const useColorPicker = (
   const setHue = (newHue: number) => {
     const newVal = formatInputValues(newHue, 0, 360)
     const tinyNew = tc({ h: newVal, s: s, l: l })
-    const { r, g, b } = tinyNew.toRgb()
+    const { r, g, b } = tinyNew!.toRgb()
     handleChange(`rgba(${r}, ${g}, ${b}, ${a})`)
   }
 
   const setSaturation = (newSat: number) => {
     const newVal = formatInputValues(newSat, 0, 100)
     const tinyNew = tc({ h: h, s: newVal / 100, l: l })
-    const { r, g, b } = tinyNew.toRgb()
+    const { r, g, b } = tinyNew!.toRgb()
     handleChange(`rgba(${r}, ${g}, ${b}, ${a})`)
   }
 
@@ -169,15 +169,15 @@ export const useColorPicker = (
   }
 
   const valueToHSL = () => {
-    return tiny.toHslString()
+    return tiny!.toHslString()
   }
 
   const valueToHSV = () => {
-    return tiny.toHsvString()
+    return tiny!.toHsvString()
   }
 
   const valueToHex = () => {
-    return tiny.toHexString()
+    return tiny!.toHexString()
   }
 
   const valueToCmyk = () => {
