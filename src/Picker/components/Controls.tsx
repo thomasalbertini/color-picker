@@ -13,6 +13,7 @@ import AdvancedControls from "./AdvancedControls.js";
 import ComparibleColors from "./ComparibleColors.js";
 import GradientControls from "./GradientControls.js";
 import { InputsIcon, PaletteIcon, SlidersIcon } from "./icon.js";
+import EyeDropper from "./EyeDropper.js";
 const { defaultColor, defaultGradient } = config;
 
 const ColorTypeBtns = ({
@@ -126,6 +127,7 @@ const InputTypeDropdown = ({
 
 const Controls = ({
   locales,
+  hideEyeDrop = false,
   hideAdvancedSliders = false,
   hideColorGuide = false,
   hideInputType = false,
@@ -135,7 +137,8 @@ const Controls = ({
   hideGradientAngle = false,
   hideGradientStop = false,
 }: {
-  locales?: LocalesProps;
+    locales?: LocalesProps;
+    hideEyeDrop?: boolean;
   hideAdvancedSliders?: boolean;
   hideColorGuide?: boolean;
   hideInputType?: boolean;
@@ -151,7 +154,8 @@ const Controls = ({
   const [openInputType, setOpenInputType] = useState(false);
   const [openAdvanced, setOpenAdvanced] = useState(false);
 
-  const noTools = hideAdvancedSliders && hideColorGuide && hideInputType;
+const noTools =
+    hideEyeDrop && hideAdvancedSliders && hideColorGuide && hideInputType
 
   const solidColor = previous?.color || defaultColor;
   const gradientColor = previous?.gradient || defaultGradient;
@@ -165,7 +169,8 @@ const Controls = ({
   };
 
   const allRightControlsHidden =
-    hideAdvancedSliders && hideColorGuide && hideInputType;
+    hideEyeDrop && hideAdvancedSliders && hideColorGuide && hideInputType;
+  
   const allControlsHidden = allRightControlsHidden && hideColorTypeBtns;
 
   if (allControlsHidden) {
@@ -206,6 +211,7 @@ const Controls = ({
                 ...defaultStyles.rbgcpControlBtnWrapper,
               }}
             >
+              {!hideEyeDrop && <EyeDropper onSelect={handleChange} />}
               <div
                 id="rbgcp-advanced-btn"
                 onClick={() => setOpenAdvanced(!openAdvanced)}

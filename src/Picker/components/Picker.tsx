@@ -36,6 +36,7 @@ const Picker = ({
       {!hideControls && (
         <Controls
           locales={locales}
+          hideEyeDrop={hideEyeDrop}
           hideInputType={hideInputType}
           hideColorGuide={hideColorGuide}
           hideGradientType={hideGradientType}

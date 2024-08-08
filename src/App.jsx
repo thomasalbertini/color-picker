@@ -17,7 +17,7 @@ function App() {
         hideOpacity
         hideAdvancedSliders
         hideColorGuide
-        hideGradientControls 
+        hideGradientControls
       />
     </div>
   );
