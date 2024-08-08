@@ -8,7 +8,7 @@ function App() {
   );
 
   return (
-    <div style={{overflow:"hidden"}}>
+    <div style={{overflow:"hidden", background: color.toLowerCase(), width: "100vw", height: "100%"}}>
       <ColorPicker
         value={color}
         onChange={setColor}

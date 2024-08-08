@@ -104,7 +104,10 @@ const GradientBar = () => {
   const addPoint = (e: any) => {
     const left = getHandleValue(e)
     const newColors = [
-      ...colors.map((c: any) => ({ ...c, value: low(c) })),
+      ...colors.map((c: any) => {
+        console.log(c)
+        return { ...c, value: low(c) }
+      }),
       { value: currentColor, left: left },
     ]?.sort((a, b) => a.left - b.left)
     createGradientStr(newColors)
@@ -125,6 +128,7 @@ const GradientBar = () => {
     if (dragging) return;
     addPoint(e)
     setDragging(true)
+    handleGradient(currentColor, getHandleValue(e))
   }
 
   const handleMove = (e: any) => {
