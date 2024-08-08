@@ -21,7 +21,8 @@ export type ColorPickerProps = {
   style?: Styles
   className?: any
   locales?: LocalesProps
-  disableDarkMode?: boolean
+  disableDarkMode?: boolean;
+  hideAllExceptEyeDrop?: boolean
 }
 
 export type ColorsProps = {

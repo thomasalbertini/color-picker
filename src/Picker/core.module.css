@@ -35,7 +35,7 @@
   padding-right: 8px;
   line-height: 1;
   border-radius: 4px;
-  font-weight: 700;
+  font-weight: 350;
   font-size: 12px;
   height: 24px;
   transition: all 160ms ease;
@@ -64,8 +64,7 @@
 }
 
 .rbgcpControlBtnWrapper {
-  height: 28px;
-  background: #e9e9f5;
+  background: "rgb(236, 236, 233)";
   border-radius: 6px;
   padding: 2px;
   display: flex;
@@ -115,21 +114,22 @@
   text-align: center;
   line-height: 1.2;
   font-weight: 700;
-  color: rgb(86, 86, 86);
+  color: rgb(64, 61, 61);
   font-size: 11px;
 }
 
 .rbgcpInput {
-  height: 32px;
-  border-radius: 6px;
-  border: 1px solid #bebebe;
-  width: 100%;
-  padding: 2px;
-  outline: none;
-  color: black;
-  font-weight: 400;
-  text-align: center;
-  box-sizing: border-box;
+  height: "19px";
+  border-radius: "6px";
+  border: "1px solid rgb(238, 238, 238)";
+  width: "100%";
+  padding: "2px";
+  font-size: "12px";
+  background-color: "transparent";
+  outline: "none";
+  color: "rgb(41, 39, 39)";
+  font-weight: 350;
+  text-align: "center";
 }
 
 .rbgcpHandle {
@@ -170,15 +170,11 @@
     ),
     white;
   background-repeat: repeat, repeat;
-  background-position:
-    0px 0,
-    7px 7px;
+  background-position: 0px 0, 7px 7px;
   transform-origin: 0 0 0;
   background-origin: padding-box, padding-box;
   background-clip: border-box, border-box;
-  background-size:
-    14px 14px,
-    14px 14px;
+  background-size: 14px 14px, 14px 14px;
   box-shadow: none;
   text-shadow: none;
   transition: none;
@@ -220,7 +216,7 @@
 
 .rbgcpControlBtnSelected {
   background: white;
-  color: #568cf5;
+  color: rgb(41, 39, 39);
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 

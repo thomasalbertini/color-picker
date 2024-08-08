@@ -1,11 +1,11 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/jsx-no-leaked-render */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { useState, useEffect } from 'react'
-import { getHandleValue } from '../utils/utils.js'
+import React, { useEffect, useState } from 'react'
 import { usePicker } from '../context.js'
-import { low, high } from '../utils/formatters.js'
 import { GradientProps } from '../shared/types.js'
+import { high, low } from '../utils/formatters.js'
+import { getHandleValue } from '../utils/utils.js'
 
 export const Handle = ({
   left,

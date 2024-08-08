@@ -11,9 +11,9 @@ import {
 } from "../styles/styles.js";
 import AdvancedControls from "./AdvancedControls.js";
 import ComparibleColors from "./ComparibleColors.js";
+import EyeDropper from "./EyeDropper.js";
 import GradientControls from "./GradientControls.js";
 import { InputsIcon, PaletteIcon, SlidersIcon } from "./icon.js";
-import EyeDropper from "./EyeDropper.js";
 const { defaultColor, defaultGradient } = config;
 
 const ColorTypeBtns = ({
@@ -136,9 +136,10 @@ const Controls = ({
   hideGradientType = false,
   hideGradientAngle = false,
   hideGradientStop = false,
+  hideAllExceptEyeDrop = true,
 }: {
-    locales?: LocalesProps;
-    hideEyeDrop?: boolean;
+  locales?: LocalesProps;
+  hideEyeDrop?: boolean;
   hideAdvancedSliders?: boolean;
   hideColorGuide?: boolean;
   hideInputType?: boolean;
@@ -147,6 +148,7 @@ const Controls = ({
   hideGradientType?: boolean;
   hideGradientAngle?: boolean;
   hideGradientStop?: boolean;
+  hideAllExceptEyeDrop?: boolean;
 }) => {
   const { onChange, isGradient, handleChange, previous, defaultStyles } =
     usePicker();
@@ -154,8 +156,8 @@ const Controls = ({
   const [openInputType, setOpenInputType] = useState(false);
   const [openAdvanced, setOpenAdvanced] = useState(false);
 
-const noTools =
-    hideEyeDrop && hideAdvancedSliders && hideColorGuide && hideInputType
+  const noTools =
+    hideEyeDrop && hideAdvancedSliders && hideColorGuide && hideInputType;
 
   const solidColor = previous?.color || defaultColor;
   const gradientColor = previous?.gradient || defaultGradient;
@@ -170,7 +172,7 @@ const noTools =
 
   const allRightControlsHidden =
     hideEyeDrop && hideAdvancedSliders && hideColorGuide && hideInputType;
-  
+
   const allControlsHidden = allRightControlsHidden && hideColorTypeBtns;
 
   if (allControlsHidden) {
@@ -187,7 +189,7 @@ const noTools =
     }
   } else {
     return (
-      <div style={{ paddingTop: 12, paddingBottom: 4 }}>
+      <div style={{ paddingTop: 9.77, paddingBottom: 4 }}>
         <div
           style={{
             width: "100%",
@@ -203,49 +205,78 @@ const noTools =
             setSolid={setSolid}
             locales={locales}
           />
-
           {!allRightControlsHidden && (
             <div
               style={{
                 display: noTools ? "none" : "",
                 ...defaultStyles.rbgcpControlBtnWrapper,
+                backgroundColor: "initial",
               }}
             >
-              {!hideEyeDrop && <EyeDropper onSelect={handleChange} />}
-              <div
-                id="rbgcp-advanced-btn"
-                onClick={() => setOpenAdvanced(!openAdvanced)}
-                style={{
-                  display: hideAdvancedSliders ? "none" : "flex",
-                  ...controlBtnStyles(openAdvanced, defaultStyles),
-                }}
-              >
-                <SlidersIcon color={openAdvanced ? "#568CF5" : ""} />
-              </div>
-              <div
-                id="rbgcp-comparibles-btn"
-                style={{
-                  display: hideColorGuide ? "none" : "flex",
-                  ...controlBtnStyles(openComparibles, defaultStyles),
-                }}
-                onClick={() => setOpenComparibles(!openComparibles)}
-              >
-                <PaletteIcon color={openComparibles ? "#568CF5" : ""} />
-              </div>
-              <div
-                id="rbgcp-color-model-btn"
-                onClick={() => setOpenInputType(!openInputType)}
-                style={{
-                  display: hideInputType ? "none" : "flex",
-                  ...controlBtnStyles(openInputType, defaultStyles),
-                }}
-              >
-                <InputsIcon color={openInputType ? "#568CF5" : ""} />
-                <InputTypeDropdown
-                  openInputType={openInputType}
-                  setOpenInputType={setOpenInputType}
+              {isGradient && !hideGradientControls && (
+                <GradientControls
+                  hideGradientType={hideGradientType}
+                  hideGradientAngle={hideGradientAngle}
+                  hideGradientStop={hideGradientStop}
                 />
-              </div>
+              )}
+
+              {!hideEyeDrop && (
+                <div
+                  style={{
+                    height: "28px",
+                    background: "rgb(236, 236, 233)",
+                    borderRadius: "6px",
+                    padding: "2px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    position: "relative",
+                    boxSizing: "border-box",
+                    width: "30px"
+                  }}
+                >
+                  <EyeDropper onSelect={handleChange} />
+                </div>
+              )}
+              {!hideAllExceptEyeDrop && (
+                <>
+                  <div
+                    id="rbgcp-advanced-btn"
+                    onClick={() => setOpenAdvanced(!openAdvanced)}
+                    style={{
+                      display: hideAdvancedSliders ? "none" : "flex",
+                      ...controlBtnStyles(openAdvanced, defaultStyles),
+                    }}
+                  >
+                    <SlidersIcon color={openAdvanced ? "#568CF5" : ""} />
+                  </div>
+                  <div
+                    id="rbgcp-comparibles-btn"
+                    style={{
+                      display: hideColorGuide ? "none" : "flex",
+                      ...controlBtnStyles(openComparibles, defaultStyles),
+                    }}
+                    onClick={() => setOpenComparibles(!openComparibles)}
+                  >
+                    <PaletteIcon color={openComparibles ? "#568CF5" : ""} />
+                  </div>
+                  <div
+                    id="rbgcp-color-model-btn"
+                    onClick={() => setOpenInputType(!openInputType)}
+                    style={{
+                      display: hideInputType ? "none" : "flex",
+                      ...controlBtnStyles(openInputType, defaultStyles),
+                    }}
+                  >
+                    <InputsIcon color={openInputType ? "#568CF5" : ""} />
+                    <InputTypeDropdown
+                      openInputType={openInputType}
+                      setOpenInputType={setOpenInputType}
+                    />
+                  </div>
+                </>
+              )}
             </div>
           )}
         </div>
@@ -254,13 +285,6 @@ const noTools =
         )}
         {!hideColorGuide && (
           <ComparibleColors openComparibles={openComparibles} />
-        )}
-        {isGradient && !hideGradientControls && (
-          <GradientControls
-            hideGradientType={hideGradientType}
-            hideGradientAngle={hideGradientAngle}
-            hideGradientStop={hideGradientStop}
-          />
         )}
       </div>
     );

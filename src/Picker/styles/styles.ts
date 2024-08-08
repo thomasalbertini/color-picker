@@ -1,5 +1,5 @@
-import { darkStyles } from './darkStyles.js';
 import { Styles } from '../shared/types.js';
+import { darkStyles } from './darkStyles.js';
 
 const styles: Styles = {
   body: {
@@ -11,7 +11,7 @@ const styles: Styles = {
     paddingRight: '8px',
     lineHeight: '1',
     borderRadius: '4px',
-    fontWeight: 700,
+    fontWeight: 350,
     fontSize: '12px',
     height: '24px',
     transition: 'all 160ms ease',
@@ -20,7 +20,7 @@ const styles: Styles = {
     justifyContent: 'center',
     background: 'rgba(255, 255, 255, 0)',
     boxShadow: '1px 1px 3px rgba(0, 0, 0, 0)',
-    color: 'rgb(86, 86, 86)',
+    color: 'rgb(143, 143, 143)',
   },
   rbgcpControlIcon: {
     stroke: 'rgb(50, 49, 54)',
@@ -35,8 +35,7 @@ const styles: Styles = {
     position: 'relative',
   },
   rbgcpControlBtnWrapper: {
-    height: '28px',
-    background: '#e9e9f5',
+    background: 'rgb(236, 236, 233)',
     borderRadius: '6px',
     padding: '2px',
     display: 'flex',
@@ -78,19 +77,21 @@ const styles: Styles = {
   rbgcpInputLabel: {
     textAlign: 'center',
     lineHeight: '1.2',
-    fontWeight: 700,
-    color: 'rgb(86, 86, 86)',
+    fontWeight: 350,
+    color: 'rgb(64, 61, 61)',
     fontSize: '11px',
   },
   rbgcpInput: {
-    height: '32px',
+    height: '19px',
     borderRadius: '6px',
-    border: '1px solid #bebebe',
+    border: '1px solid rgb(238, 238, 238)',
     width: '100%',
     padding: '2px',
+    fontSize: "12px",
+    backgroundColor: "transparent",
     outline: 'none',
-    color: 'black',
-    fontWeight: 400,
+    color: 'rgb(41, 39, 39)',
+    fontWeight: 350,
     textAlign: 'center',
   },
   rbgcpHandle: {
@@ -159,8 +160,8 @@ const styles: Styles = {
     border: '2px solid white',
     borderRadius: '50%',
     boxShadow: '0px 0px 3px rgba(0, 0, 0, 0.5)',
-    width: '18px',
-    height: '18px',
+    width: '14px',
+    height: '14px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -170,7 +171,7 @@ const styles: Styles = {
   },
   rbgcpControlBtnSelected: {
     background: 'white',
-    color: '#568cf5',
+    color: 'rgb(41, 39, 39)',
     boxShadow: '1px 1px 3px rgba(0, 0, 0, 0.2)',
   },
   rbgcpComparibleLabel: {

@@ -12,12 +12,11 @@ function App() {
       <ColorPicker
         value={color}
         onChange={setColor}
-
         hidePresets
         hideOpacity
-        hideAdvancedSliders
-        hideColorGuide
-        hideGradientControls
+        hideGradientType
+        hideGradientStop
+        disableDarkMode
       />
     </div>
   );

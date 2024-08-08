@@ -27,8 +27,8 @@ export default function PickerContextWrapper({
   const [inputType, setInputType] = useState('rgb')
   const [previous, setPrevious] = useState({})
   const tinyColor = tinycolor(currentColor)
-  const rgba = tinyColor.toRgb()
-  const hsv = tinyColor.toHsv()
+  const rgba = tinyColor!.toRgb()
+  const hsv = tinyColor!.toHsv()
   const [hc, setHc] = useState({ ...rgba, ...hsv })
 
   useEffect(() => {

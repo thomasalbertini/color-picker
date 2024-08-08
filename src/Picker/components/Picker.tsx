@@ -27,6 +27,7 @@ const Picker = ({
   hideColorTypeBtns,
   hideAdvancedSliders,
   hideGradientControls,
+  hideAllExceptEyeDrop
 }: PickerProps) => {
   const { isGradient } = usePicker();
 
@@ -40,6 +41,7 @@ const Picker = ({
           hideInputType={hideInputType}
           hideColorGuide={hideColorGuide}
           hideGradientType={hideGradientType}
+          hideAllExceptEyeDrop={hideAllExceptEyeDrop}
           hideGradientStop={hideGradientStop}
           hideColorTypeBtns={hideColorTypeBtns}
           hideGradientAngle={hideGradientAngle}
@@ -75,4 +77,5 @@ type PickerProps = {
   hideGradientStop?: boolean;
   hideGradientControls?: boolean;
   locales?: LocalesProps;
+  hideAllExceptEyeDrop?: boolean;
 };

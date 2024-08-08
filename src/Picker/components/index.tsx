@@ -27,6 +27,7 @@ export function ColorPicker({
   hideGradientControls = false,
   locales = defaultLocales,
   width = 294,
+  hideAllExceptEyeDrop = true,
   height = 294,
   style = {},
   className,
@@ -55,6 +56,7 @@ export function ColorPicker({
           hideInputs={hideInputs}
           hidePresets={hidePresets}
           hideOpacity={hideOpacity}
+          hideAllExceptEyeDrop={hideAllExceptEyeDrop}
           hideHue={hideHue}
           presets={presets}
           hideEyeDrop={hideEyeDrop}
