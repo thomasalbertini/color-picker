@@ -1,5 +1,6 @@
-import { Styles } from '../shared/types';
-import { darkStyles } from './darkStyles';
+
+import { Styles } from '../shared/types.js';
+import { darkStyles } from './darkStyles.js';
 
 const styles: Styles = {
   body: {

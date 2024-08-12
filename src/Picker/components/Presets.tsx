@@ -1,6 +1,6 @@
-import { fakePresets } from '../constants'
-import { usePicker } from '../context'
-
+import { fakePresets } from '../constants.js'
+import { usePicker } from '../context.js'
+import React from 'react'
 const Presets = ({ presets = [] }: { presets?: string[] }) => {
   const { value, onChange, handleChange, squareWidth } = usePicker()
 

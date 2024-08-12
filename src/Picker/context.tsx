@@ -6,9 +6,10 @@ import {
   useState,
 } from 'react'
 import tinycolor from 'tinycolor2'
-import { GradientProps, Styles } from './shared/types'
-import { getColors, high, low } from './utils/formatters'
-import { getColorObj, getDetails, isUpperCase } from './utils/utils'
+import { GradientProps, Styles } from './shared/types.js'
+import { getColors, high, low } from './utils/formatters.js'
+import { getColorObj, getDetails, isUpperCase } from './utils/utils.js'
+import React from 'react'
 
 const PickerContext = createContext<PickerContextProps | null>(null)
 

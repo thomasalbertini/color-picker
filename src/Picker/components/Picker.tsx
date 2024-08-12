@@ -1,13 +1,13 @@
-import { usePicker } from "../context";
-import { LocalesProps } from "../shared/types";
-import Controls from "./Controls";
-import GradientBar from "./GradientBar";
-import Hue from "./Hue";
-import Inputs from "./Inputs";
-import Opacity from "./Opacity";
-import Presets from "./Presets";
-import Square from "./Square";
-
+import { usePicker } from "../context.js";
+import { LocalesProps } from "../shared/types.js";
+import Controls from "./Controls.js";
+import GradientBar from "./GradientBar.js";
+import Hue from "./Hue.js";
+import Inputs from "./Inputs.js";
+import Opacity from "./Opacity.js";
+import Presets from "./Presets.js";
+import Square from "./Square.js";
+import React from 'react'
 
 
 const Picker = ({

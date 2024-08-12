@@ -1,6 +1,6 @@
-import { config } from '../constants'
-import { ColorsProps } from '../shared/types'
-import { formatInputValues } from './formatters'
+import { config } from '../constants.js'
+import { ColorsProps } from '../shared/types.js'
+import { formatInputValues } from './formatters.js'
 
 const { barSize, crossSize } = config
 

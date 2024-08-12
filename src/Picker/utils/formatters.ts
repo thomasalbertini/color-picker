@@ -1,6 +1,6 @@
-import { config } from '../constants'
-import { ColorsProps } from '../shared/types'
-import { gradientParser } from './gradientParser'
+import { config } from '../constants.js'
+import { ColorsProps } from '../shared/types.js'
+import { gradientParser } from './gradientParser.js'
 
 const { defaultColor, defaultGradient } = config
 

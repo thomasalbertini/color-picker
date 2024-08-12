@@ -1,10 +1,10 @@
 
 import { useEffect, useRef, useState } from 'react'
 import tinycolor from 'tinycolor2'
-import { usePicker } from '../context'
-import { usePaintBright, usePaintLight, usePaintSat } from '../hooks/usePaintHue'
-import { getHandleValue } from '../utils/utils'
-
+import { usePicker } from "../context.js"
+import { usePaintBright, usePaintLight, usePaintSat } from '../hooks/usePaintHue.js'
+import { getHandleValue } from '../utils/utils.js'
+import React from 'react'
 const AdvBar = ({
   value,
   callback,

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { usePicker } from '../context'
-import { getHandleValue } from '../utils/utils'
-
+import { usePicker } from '../context.js'
+import { getHandleValue } from '../utils/utils.js'
+import React from 'react'
 const Opacity = () => {
   const { handleChange, hc = {}, squareWidth, defaultStyles } = usePicker()
   const [dragging, setDragging] = useState(false)

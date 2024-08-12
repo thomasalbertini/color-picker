@@ -1,9 +1,11 @@
-import html2canvas from 'html2canvas'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import tc from 'tinycolor2'
-import { usePicker } from "../context"
-import { controlBtnStyles } from '../styles/styles'
-import Portal from './Portal'
+import { usePicker } from "../context.js"
+import { controlBtnStyles } from '../styles/styles.js'
+import Portal from './Portal.js'
+import * as html2canvas from 'html2canvas'
+
+const h2c: any = html2canvas
 
 const DropperIcon = ({ color }: { color: string }) => {
   const { defaultStyles } = usePicker()
@@ -62,7 +64,7 @@ const EyeDropper = ({ onSelect }: { onSelect: (arg0: string) => void }) => {
     const root = document.getElementById('root')
     setCoverUp(true)
 
-    html2canvas(root!).then((canvas: any) => {
+    h2c(root!).then((canvas: any) => {
       const blankCanvas = document.createElement('canvas')
       const ctx = blankCanvas.getContext('2d', { willReadFrequently: true })
 

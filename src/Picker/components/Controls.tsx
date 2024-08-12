@@ -1,17 +1,18 @@
+import React from 'react'
 import { useState } from "react";
-import { config } from "../constants";
-import { usePicker } from "../context";
-import { LocalesProps } from "../shared/types";
+import { config } from "../constants.js";
+import { usePicker } from "../context.js";
+import { LocalesProps } from "../shared/types.js";
 import {
   colorTypeBtnStyles,
   controlBtnStyles,
   modalBtnStyles,
-} from "../styles/styles";
-import AdvancedControls from "./AdvancedControls";
-import ComparibleColors from "./ComparibleColors";
-import EyeDropper from "./EyeDropper";
-import GradientControls from "./GradientControls";
-import { InputsIcon, PaletteIcon, SlidersIcon } from "./icon";
+} from "../styles/styles.js";
+import AdvancedControls from "./AdvancedControls.js";
+import ComparibleColors from "./ComparibleColors.js";
+import EyeDropper from "./EyeDropper.js";
+import GradientControls from "./GradientControls.js";
+import { InputsIcon, PaletteIcon, SlidersIcon } from "./icon.js";
 const { defaultColor, defaultGradient } = config;
 
 const ColorTypeBtns = ({

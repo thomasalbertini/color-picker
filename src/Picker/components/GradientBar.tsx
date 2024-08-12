@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import { usePicker } from '../context'
-import { GradientProps } from '../shared/types'
-import { high, low } from '../utils/formatters'
-import { getHandleValue } from '../utils/utils'
-
+import { usePicker } from "../context.js"
+import { GradientProps } from '../shared/types.js'
+import { high, low } from '../utils/formatters.js'
+import { getHandleValue } from '../utils/utils.js'
+import React from 'react'
 
 export const Handle = ({
   left,

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import tc from 'tinycolor2'
-import { usePicker } from '../context'
-import { cmykToRgb, rgb2cmyk } from '../utils/converters'
-import { formatInputValues, round } from '../utils/formatters'
-
+import { usePicker } from "../context.js"
+import { cmykToRgb, rgb2cmyk } from '../utils/converters.js'
+import { formatInputValues, round } from '../utils/formatters.js'
+import React from 'react'
 const Input = ({
   value,
   callback,

@@ -2,16 +2,36 @@
   "name": "@thomasalbertini/react-gradient-color-picker",
   "version": "0.0.4",
   "type": "module",
-  "main": "./dist/react-gradient-color-picker.umd.cjs",
-  "module": "./dist/react-gradient-color-picker.js",
-  "files": [
-    "dist"
+  "sideEffects": [
+    "*.css"
   ],
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "source": "./src/index.ts",
+  "types": "./dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./dist/Calendar.css": "./dist/Picker.css"
+  },
   "scripts": {
+    "build": "npm run build-js && npm run copy-styles",
+    "build-js": "npm run build-js-esm && npm run build-js-cjs && npm run build-js-cjs-package",
+    "build-js-esm": "tsc --project tsconfig.build.json --outDir dist/esm",
+    "build-js-cjs": "tsc --project tsconfig.build.json --outDir dist/cjs --module commonjs --moduleResolution node --verbatimModuleSyntax false",
+    "build-js-cjs-package": "echo '{\n  \"type\": \"commonjs\"\n}' > dist/cjs/package.json",
+    "clean": "rimraf dist",
+    "copy-styles": "copyup 'src/**/*.css' dist",
+    "format": "biome format",
+    "lint": "biome lint",
+    "prepack": "npm run clean && npm run build",
+    "tsc": "tsc",
+    "unit": "vitest",
+    "watch": "npm run build-js-esm --watch & npm run build-js-cjs --watch & node --eval \"fs.watch('src', () => child_process.exec('yarn copy-styles'))\"",
     "dev": "vite --host",
     "build:css": "copyup 'src/**/*.css' dist/css",
-    "build": "vite build && npm run build:css",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "exit 0"
   },
@@ -26,8 +46,8 @@
     "copyfiles": "^2.4.1",
     "html2canvas": "^1.4.1",
     "lodash.throttle": "^4.1.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
     "tinycolor2": "1.4.2"
   },
   "devDependencies": {
@@ -43,5 +63,19 @@
     "glob": "^11.0.0",
     "vite": "^5.3.4",
     "vite-plugin-dts": "^4.0.2"
-  }
+  },
+  "peerDependencies": {
+    "@types/react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ]
 }
