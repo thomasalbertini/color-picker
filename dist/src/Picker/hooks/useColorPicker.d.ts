@@ -1,0 +1,42 @@
+export declare const useColorPicker: (value: string, onChange: (arg0: string) => void) => {
+    setR: (newR: number) => void;
+    setG: (newG: number) => void;
+    setB: (newB: number) => void;
+    setA: (newA: number) => void;
+    setHue: (newHue: number) => void;
+    addPoint: (left: number) => void;
+    setSolid: (startingColor: string) => void;
+    setLinear: () => void;
+    setRadial: () => void;
+    valueToHSL: () => string;
+    valueToHSV: () => string;
+    valueToHex: () => string;
+    valueToCmyk: () => string;
+    setDegrees: (newDegrees: number) => void;
+    setGradient: (startingGradiant: string) => void;
+    setLightness: (newLight: number) => void;
+    setSaturation: (newSat: number) => void;
+    setSelectedPoint: (index: number) => void;
+    deletePoint: (index: number) => void;
+    isGradient: boolean;
+    gradientType: string;
+    degrees: number;
+    setPointLeft: (left: number) => void;
+    currentLeft: number;
+    rgbaArr: number[];
+    hslArr: number[];
+    handleChange: (newColor: string) => void;
+    previousColors: never[];
+    getGradientObject: () => {
+        isGradient: boolean;
+        gradientType: string;
+        degrees: string;
+        colors: any;
+    } | {
+        isGradient: boolean;
+        gradientType: null;
+        degrees: null;
+        colors: any;
+    } | undefined;
+    selectedPoint: number;
+};

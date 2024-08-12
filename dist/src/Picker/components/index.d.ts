@@ -1,0 +1,2 @@
+import { ColorPickerProps } from '../shared/types.ts';
+export declare function ColorPicker({ value, onChange, hideControls, hideInputs, hideOpacity, hidePresets, hideHue, presets, hideEyeDrop, hideAdvancedSliders, hideColorGuide, hideInputType, hideColorTypeBtns, hideGradientType, hideGradientAngle, hideGradientStop, hideGradientControls, locales, width, hideAllExceptEyeDrop, height, style, className, disableDarkMode, }: ColorPickerProps): import("react/jsx-runtime").JSX.Element;
