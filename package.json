@@ -1,18 +1,18 @@
 {
   "name": "@thomasalbertini/react-gradient-color-picker",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "module",
   "sideEffects": [
     "*.css"
   ],
-  "main": "./dist/cjs/main.js",
-  "module": "./dist/esm/main.js",
-  "source": "./src/main.ts",
-  "types": "./dist/cjs/main.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "source": "./src/Picker/index.ts",
+  "types": "./dist/cjs/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/esm/main.js",
-      "require": "./dist/cjs/main.js"
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
     },
     "./dist/Calendar.css": "./dist/Picker.css"
   },
