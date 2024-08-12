@@ -4,7 +4,6 @@
   "type": "module",
   "main": "./dist/react-gradient-color-picker.umd.cjs",
   "module": "./dist/react-gradient-color-picker.js",
-  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
