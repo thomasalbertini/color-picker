@@ -3,8 +3,8 @@
     "compilerOptions": {
       "noEmit": false,
       "outDir": "dist",
-      "rootDir": "src"
+      "rootDir": "./src/Picker"
     },
-    "include": ["src"],
+    "include": ["./src/Picker"],
     "exclude": ["src/**/*.spec.ts", "src/**/*.spec.tsx"]
   }
