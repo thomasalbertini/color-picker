@@ -1,9 +1,9 @@
 {
   "name": "@thomasalbertini/react-gradient-color-picker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
-  "main": "./dist/index.umd.cjs",
-  "module": "./dist/index.js",
+  "main": "./dist/react-gradient-color-picker.umd.cjs",
+  "module": "./dist/react-gradient-color-picker.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
