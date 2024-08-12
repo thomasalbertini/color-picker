@@ -1,9 +1,9 @@
 import html2canvas from 'html2canvas'
 import { useState } from 'react'
 import tc from 'tinycolor2'
-import { usePicker } from "../context.tsx"
-import { controlBtnStyles } from '../styles/styles.ts'
-import Portal from './Portal.tsx'
+import { usePicker } from "../context"
+import { controlBtnStyles } from '../styles/styles'
+import Portal from './Portal'
 
 const DropperIcon = ({ color }: { color: string }) => {
   const { defaultStyles } = usePicker()

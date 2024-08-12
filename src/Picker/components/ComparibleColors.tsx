@@ -1,5 +1,5 @@
 import React from 'react'
-import { usePicker } from '../context.tsx'
+import { usePicker } from '../context.js'
 
 const ComparibleColors = ({
   openComparibles,

@@ -1,17 +1,17 @@
 import { useState } from "react";
-import { config } from "../constants.ts";
-import { usePicker } from "../context.tsx";
-import { LocalesProps } from "../shared/types.ts";
+import { config } from "../constants";
+import { usePicker } from "../context";
+import { LocalesProps } from "../shared/types";
 import {
   colorTypeBtnStyles,
   controlBtnStyles,
   modalBtnStyles,
-} from "../styles/styles.ts";
-import AdvancedControls from "./AdvancedControls.tsx";
-import ComparibleColors from "./ComparibleColors.tsx";
-import EyeDropper from "./EyeDropper.tsx";
-import GradientControls from "./GradientControls.tsx";
-import { InputsIcon, PaletteIcon, SlidersIcon } from "./icon.tsx";
+} from "../styles/styles";
+import AdvancedControls from "./AdvancedControls";
+import ComparibleColors from "./ComparibleColors";
+import EyeDropper from "./EyeDropper";
+import GradientControls from "./GradientControls";
+import { InputsIcon, PaletteIcon, SlidersIcon } from "./icon";
 const { defaultColor, defaultGradient } = config;
 
 const ColorTypeBtns = ({

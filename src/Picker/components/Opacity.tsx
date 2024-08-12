@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { usePicker } from '../context.tsx'
-import { getHandleValue } from '../utils/utils.ts'
+import { useEffect, useState } from 'react'
+import { usePicker } from '../context'
+import { getHandleValue } from '../utils/utils'
 
 const Opacity = () => {
   const { handleChange, hc = {}, squareWidth, defaultStyles } = usePicker()

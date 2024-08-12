@@ -1,10 +1,10 @@
 import throttle from "lodash.throttle";
 import { useEffect, useRef, useState } from "react";
 import tinycolor from "tinycolor2";
-import { config } from "../constants.ts";
-import { usePicker } from "../context.tsx";
-import usePaintSquare from "../hooks/usePaintSquare.ts";
-import { computePickerPosition, computeSquareXY } from "../utils/utils.ts";
+import { config } from "../constants";
+import { usePicker } from "../context";
+import usePaintSquare from "../hooks/usePaintSquare";
+import { computePickerPosition, computeSquareXY } from "../utils/utils";
 
 const { crossSize } = config;
 

@@ -1,13 +1,12 @@
-import React from "react";
-import { usePicker } from "../context.tsx";
-import { controlBtnStyles } from "../styles/styles.ts";
-import { formatInputValues, high, low } from "../utils/formatters.ts";
+import { usePicker } from "../context";
+import { controlBtnStyles } from "../styles/styles";
+import { formatInputValues, high, low } from "../utils/formatters";
 import TrashIcon, {
   DegreesIcon,
   LinearIcon,
   RadialIcon,
   StopIcon,
-} from "./icon.tsx";
+} from "./icon";
 
 const GradientType = () => {
   const { gradientType, onChange, value, defaultStyles } = usePicker();

@@ -1,6 +1,6 @@
 import tinycolor from 'tinycolor2'
-import { high, low } from './formatters.ts'
-import { isUpperCase } from './utils.ts'
+import { high, low } from './formatters'
+import { isUpperCase } from './utils'
 
 export const gradientParser = (input = '') => {
   const tokens = {

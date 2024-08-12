@@ -1,6 +1,6 @@
-import { config } from '../constants.ts'
-import { ColorsProps } from '../shared/types.ts'
-import { formatInputValues } from './formatters.ts'
+import { config } from '../constants'
+import { ColorsProps } from '../shared/types'
+import { formatInputValues } from './formatters'
 
 const { barSize, crossSize } = config
 

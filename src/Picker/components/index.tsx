@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { defaultLocales } from '../constants.js'
 import PickerContextWrapper from '../context.js'
-import { ColorPickerProps } from '../shared/types.js'
+import { ColorPickerProps } from '../shared/types'
 import { getStyles } from '../styles/styles.js'
 import { objectToString } from '../utils/utils.js'
 import Picker from './Picker'

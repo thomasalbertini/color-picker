@@ -1,8 +1,8 @@
-import React, { useRef, useState, useEffect } from 'react'
-import { usePicker } from '../context.tsx'
-import usePaintHue from '../hooks/usePaintHue.ts'
-import { getHandleValue } from '../utils/utils.ts'
+import { useEffect, useRef, useState } from 'react'
 import tinycolor from 'tinycolor2'
+import { usePicker } from '../context'
+import usePaintHue from '../hooks/usePaintHue'
+import { getHandleValue } from '../utils/utils'
 
 const Hue = () => {
   const barRef = useRef<HTMLCanvasElement>(null)
