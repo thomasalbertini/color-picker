@@ -25,6 +25,7 @@
     "@thomasalbertini:registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
+    "copyfiles": "^2.4.1",
     "html2canvas": "^1.4.1",
     "lodash.throttle": "^4.1.1",
     "react": "^18.3.1",
