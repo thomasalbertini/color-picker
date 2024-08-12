@@ -1,12 +1,11 @@
 {
   "name": "@thomasalbertini/react-gradient-color-picker",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "main": "./dist/react-gradient-color-picker.umd.cjs",
   "module": "./dist/react-gradient-color-picker.js",
   "files": [
-    "./dist",
-    "./dist/dist"
+    "dist"
   ],
   "scripts": {
     "dev": "vite --host",
