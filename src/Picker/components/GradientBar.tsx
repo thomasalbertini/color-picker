@@ -122,9 +122,8 @@ const GradientBar = () => {
 
   const handleDown = (e: any) => {
     // if (dragging) return;
-    addPoint(e)
     setDragging(true)
-    handleGradient(currentColor, getHandleValue(e))
+
   }
 
   const handleMove = (e: any) => {
