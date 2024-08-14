@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { usePicker } from "../context.js"
 import { GradientProps } from '../shared/types.js'
 import { high, low } from '../utils/formatters.js'
 import { getHandleValue } from '../utils/utils.js'
-import React from 'react'
 
 export const Handle = ({
   left,
@@ -122,7 +121,7 @@ const GradientBar = () => {
   }
 
   const handleDown = (e: any) => {
-    if (dragging) return;
+    // if (dragging) return;
     addPoint(e)
     setDragging(true)
     handleGradient(currentColor, getHandleValue(e))
