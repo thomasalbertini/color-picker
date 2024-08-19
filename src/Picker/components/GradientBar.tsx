@@ -126,10 +126,13 @@ const GradientBar = () => {
     setDragging(true)
     handleGradient(currentColor, getHandleValue(e))
   }
-
+  let timer: any;
   const handleMove = (e: any) => {
-    if (dragging) handleGradient(currentColor, getHandleValue(e))
-  }
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      if (dragging) handleGradient(currentColor, getHandleValue(e));
+    }, 300);
+  };
 
   // const handleKeyboard = (e: any) => {
   //   if (isGradient) {
