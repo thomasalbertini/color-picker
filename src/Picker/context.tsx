@@ -1,4 +1,4 @@
-import {
+import React, {
   createContext,
   ReactNode,
   useContext,
@@ -9,7 +9,6 @@ import tinycolor from 'tinycolor2'
 import { GradientProps, Styles } from './shared/types.js'
 import { getColors, high, low } from './utils/formatters.js'
 import { getColorObj, getDetails, isUpperCase } from './utils/utils.js'
-import React from 'react'
 
 const PickerContext = createContext<PickerContextProps | null>(null)
 
@@ -25,8 +24,7 @@ export default function PickerContextWrapper({
 
   const [gc, setGc] = useState(value) 
   const colors = getColors(gc)
-
-  const { degrees, degreeStr, isGradient, gradientType } = getDetails(gc)
+  const { degrees, degreeStr, isGradient, gradientType } = getDetails(value)
   const { currentColor, selectedColor, currentLeft } = getColorObj(colors)
   const [inputType, setInputType] = useState('rgb')
   const [previous, setPrevious] = useState({})
@@ -68,6 +66,7 @@ export default function PickerContextWrapper({
       handleGradient(newColor)
     } else {
       setPrevious({ ...previous, color: newColor })
+      setGc(newColor)
       onChange(newColor)
     }
   }
@@ -90,6 +89,7 @@ export default function PickerContextWrapper({
     gc,
     setHc,
     value,
+    setGc,
     colors,
     degrees,
     onChange,
@@ -146,6 +146,7 @@ export type PickerContextProps = {
   colors: GradientProps[]
   degrees: number
   onChange: (arg0: string) => void
+  setGc: (arg0: string) => void
   inputType: string
   tinyColor: any
   isGradient: boolean

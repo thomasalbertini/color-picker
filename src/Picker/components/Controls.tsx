@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState } from "react";
+import React, { useState } from 'react';
 import { config } from "../constants.js";
 import { usePicker } from "../context.js";
 import { LocalesProps } from "../shared/types.js";
@@ -149,7 +148,7 @@ const Controls = ({
   hideGradientStop?: boolean;
   hideAllExceptEyeDrop?: boolean;
 }) => {
-  const { onChange, isGradient, handleChange, previous, defaultStyles } =
+  const { onChange, setGc, isGradient, handleChange, previous, defaultStyles } =
     usePicker();
   const [openComparibles, setOpenComparibles] = useState(false);
   const [openInputType, setOpenInputType] = useState(false);
@@ -162,10 +161,12 @@ const Controls = ({
   const gradientColor = previous?.gradient || defaultGradient;
 
   const setSolid = () => {
+    setGc(solidColor)
     onChange(solidColor);
   };
-
+  
   const setGradient = () => {
+    setGc(gradientColor)
     onChange(gradientColor);
   };
 
