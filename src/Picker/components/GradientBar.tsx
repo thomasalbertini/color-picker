@@ -53,8 +53,8 @@ export const Handle = ({
       // onFocus={handleFocus}
       id={`gradient-handle-${i}`}
       onMouseDown={(e) => handleDown(e)}
-      className='rbgcpGradientHandleWrap'
       style={{
+        ...defaultStyles.rbgcpGradientHandleWrap,
         left: (left || 0) * leftMultiplyer,
       }}
     >

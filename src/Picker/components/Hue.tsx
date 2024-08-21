@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import tinycolor from 'tinycolor2'
 import { usePicker } from '../context.js'
 import usePaintHue from '../hooks/usePaintHue.js'
 import { getHandleValue } from '../utils/utils.js'
-import React from 'react'
 const Hue = () => {
   const barRef = useRef<HTMLCanvasElement>(null)
   const { handleChange, squareWidth, hc, setHc } = usePicker()
@@ -44,9 +43,11 @@ const Hue = () => {
     }
 
     window.addEventListener('mouseup', handleUp)
+    window.addEventListener('touchend', handleUp)
 
     return () => {
       window.removeEventListener('mouseup', handleUp)
+      window.removeEventListener('touchend', handleUp)
     }
   }, [])
 
@@ -59,6 +60,7 @@ const Hue = () => {
         cursor: 'ew-resize',
         position: 'relative',
       }}
+      onTouchMove={(e) => handleMove(e.touches[0])}
       onMouseMove={(e) => handleMove(e)}
     >
       <div
@@ -78,6 +80,7 @@ const Hue = () => {
           cursor: 'ew-resize',
           boxSizing: 'border-box',
         }}
+        onTouchStart={handleDown}
         onMouseDown={handleDown}
       />
       <canvas
