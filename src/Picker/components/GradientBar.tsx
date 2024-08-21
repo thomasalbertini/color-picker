@@ -87,7 +87,8 @@ const GradientBar = () => {
     colors,
     value,
     handleGradient,
-    squareWidth
+    squareWidth,
+    gc
   } = usePicker()
   const [dragging, setDragging] = useState(false)
   // const [inFocus, setInFocus] = useState<string | null>(null)
@@ -173,7 +174,7 @@ const GradientBar = () => {
           height: 14,
           borderRadius: 10,
           width: squareWidth,
-          backgroundImage: force90degLinear(value),
+          backgroundImage: force90degLinear(gc),
         }}
         onMouseDown={(e) => handleDown(e)}
         onMouseMove={(e) => handleMove(e)}

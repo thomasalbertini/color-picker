@@ -23,9 +23,10 @@ export default function PickerContextWrapper({
   defaultStyles,
 }: PCWProps) {
 
-  const colors = getColors(value)
+  const [gc, setGc] = useState(value) 
+  const colors = getColors(gc)
 
-  const { degrees, degreeStr, isGradient, gradientType } = getDetails(value)
+  const { degrees, degreeStr, isGradient, gradientType } = getDetails(gc)
   const { currentColor, selectedColor, currentLeft } = getColorObj(colors)
   const [inputType, setInputType] = useState('rgb')
   const [previous, setPrevious] = useState({})
@@ -49,6 +50,7 @@ export default function PickerContextWrapper({
     const colorString = sorted?.map((cc: any) => `${cc?.value} ${cc.left}%`)
     const newGrade = `${gradientType}(${degreeStr}, ${colorString.join(', ')})`
     setPrevious({ ...previous, gradient: newGrade })
+    setGc(newGrade)
     onChange(newGrade)
   }
 
@@ -85,6 +87,7 @@ export default function PickerContextWrapper({
 
   const pickerContext = {
     hc,
+    gc,
     setHc,
     value,
     colors,
@@ -138,6 +141,7 @@ type PCWProps = {
 
 export type PickerContextProps = {
   hc: any
+  gc: string;
   value: string
   colors: GradientProps[]
   degrees: number
