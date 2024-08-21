@@ -122,8 +122,8 @@ const GradientBar = () => {
 
   const handleDown = (e: any) => {
     if (dragging) return;
-    addPoint(e)
-    setDragging(true)
+    // addPoint(e)
+    // setDragging(true)
     handleGradient(currentColor, getHandleValue(e))
   }
 
@@ -164,6 +164,7 @@ const GradientBar = () => {
         position: 'relative',
       }}
       id="gradient-bar"
+      onMouseMove={(e) => handleMove(e)}
     >
       <div
         style={{
@@ -173,7 +174,6 @@ const GradientBar = () => {
           backgroundImage: force90degLinear(value),
         }}
         onMouseDown={(e) => handleDown(e)}
-        onMouseMove={(e) => handleMove(e)}
       />
       {colors?.map((c: any, i) => (
         <Handle
