@@ -1,6 +1,6 @@
 {
   "name": "@thomasalbertini/react-gradient-color-picker",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "type": "module",
   "sideEffects": [
     "*.css"

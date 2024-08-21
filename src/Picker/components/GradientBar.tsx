@@ -53,8 +53,8 @@ export const Handle = ({
       // onFocus={handleFocus}
       id={`gradient-handle-${i}`}
       onMouseDown={(e) => handleDown(e)}
+      className='rbgcpGradientHandleWrap'
       style={{
-        ...defaultStyles.rbgcpGradientHandleWrap,
         left: (left || 0) * leftMultiplyer,
       }}
     >
@@ -66,6 +66,7 @@ export const Handle = ({
       >
         {isSelected && (
           <div
+            id="selected-gradient-circle-bar"
             style={{
               width: 5,
               height: 5,
@@ -126,12 +127,9 @@ const GradientBar = () => {
     setDragging(true)
     handleGradient(currentColor, getHandleValue(e))
   }
-  let timer: any;
+
   const handleMove = (e: any) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
       if (dragging) handleGradient(currentColor, getHandleValue(e));
-    }, 300);
   };
 
   // const handleKeyboard = (e: any) => {
@@ -151,10 +149,12 @@ const GradientBar = () => {
   useEffect(() => {
     window.addEventListener('mouseup', handleUp)
     // window?.addEventListener('keydown', handleKeyboard)
+    window.addEventListener('touchend', handleUp)
 
     return () => {
       window.removeEventListener('mouseup', handleUp)
       // window?.removeEventListener('keydown', handleKeyboard)
+      window.removeEventListener('touchend', handleUp)
     }
   })
 
@@ -177,7 +177,22 @@ const GradientBar = () => {
         }}
         onMouseDown={(e) => handleDown(e)}
         onMouseMove={(e) => handleMove(e)}
-      />
+        onTouchMove={(e) => {
+          if (!e?.touches[0]) return
+          const touchedElement = e.touches[0].target as HTMLDivElement
+          if (touchedElement.id === 'selected-gradient-circle-bar') {
+            handleMove({
+              clientX: e.touches[0].clientX,
+              target: {
+                parentNode:
+                  touchedElement.parentElement?.parentElement?.parentElement,
+              },
+            })
+            return
+          }
+          handleMove(e.touches[0])
+        }}
+        />
       {colors?.map((c: any, i) => (
         <Handle
           i={i}
